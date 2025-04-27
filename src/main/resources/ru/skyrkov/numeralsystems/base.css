@@ -1,0 +1,106 @@
+/* Base dark theme colors */
+.root {
+    -fx-base: #2b2b2b;
+    -fx-background: #1e1e1e;
+    -fx-control-inner-background: #2d2d2d;
+    -fx-default-text: #e0e0e0; /* Изменили имя переменной */
+    -fx-accent: #3f6a8a;
+    -fx-focus-color: #3f6a8a;
+    -fx-faint-focus-color: rgba(63, 106, 138, 0.2);
+}
+
+/* TabPane styling */
+.tab-pane {
+    -fx-background-color: -fx-background;
+    -fx-tab-min-width: 120px;
+}
+
+.tab {
+    -fx-background-color: #333333;
+    -fx-background-insets: 0 1 0 1, 0, 0;
+    -fx-padding: 8 16 8 16;
+}
+
+.tab:selected {
+    -fx-background-color: #3f6a8a;
+    -fx-focus-color: transparent;
+}
+
+.tab-label {
+    -fx-text-fill: -fx-default-text;
+    -fx-font-size: 14px;
+}
+
+/* Text fields and buttons */
+.text-field, .combo-box {
+    -fx-background-color: #333333;
+    -fx-background-radius: 4;
+    -fx-border-color: #444444;
+    -fx-border-radius: 4;
+    -fx-border-width: 1;
+    -fx-padding: 6 10 6 10;
+    -fx-text-fill: -fx-default-text;
+    -fx-font-size: 16px;
+}
+
+.button {
+    -fx-background-color: #3f6a8a;
+    -fx-background-radius: 4;
+    -fx-border-color: #444444;
+    -fx-border-radius: 4;
+    -fx-border-width: 1;
+    -fx-padding: 6 10 6 10;
+    -fx-text-fill: white;
+    -fx-font-size: 16px;
+    -fx-cursor: hand;
+}
+
+.text-field:focused, .combo-box:focused {
+    -fx-border-color: -fx-focus-color;
+}
+
+.button:hover {
+    -fx-background-color: #4a7ba2;
+}
+
+.button:pressed {
+    -fx-background-color: #355772;
+}
+
+/* Labels */
+.label {
+    -fx-text-fill: -fx-default-text;
+    -fx-font-size: 16px;
+}
+
+/* Error label */
+#errorLabel {
+    -fx-text-fill: #ff5555;
+}
+
+/* ComboBox items */
+.combo-box .list-cell {
+    -fx-background-color: #333333;
+    -fx-text-fill: -fx-default-text;
+}
+
+.combo-box .list-view {
+    -fx-background-color: #333333;
+    -fx-background-insets: 0;
+    -fx-border-color: #444444;
+}
+
+.combo-box .list-cell:hover {
+    -fx-background-color: #3f6a8a;
+}
+
+/* Grid and layout styling */
+.grid-pane, .vbox, .hbox, .anchor-pane {
+    -fx-background-color: transparent;
+}
+
+/* Disabled fields */
+.text-field:disabled, .combo-box:disabled {
+    -fx-opacity: 0.7;
+    -fx-background-color: #2a2a2a;
+}
