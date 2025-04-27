@@ -12,8 +12,8 @@ public class NumeralSystemsApp extends Application {
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(NumeralSystemsApp.class.getResource("hello-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
-        stage.setMinWidth(600);
-        stage.setMinHeight(400);
+        stage.setMinWidth(800);
+        stage.setMinHeight(600);
         stage.setTitle("Numeral systems");
         stage.setScene(scene);
         stage.show();

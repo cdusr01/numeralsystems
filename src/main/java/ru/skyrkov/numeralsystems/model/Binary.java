@@ -53,6 +53,17 @@ public class Binary extends NumeralSystem{
     public void setValue(String binary){
         setBinary(binary);
     }
+
+    @Override
+    public String getAdditionResult(NumeralSystem system) {
+        return new Decimal(String.valueOf(Integer.parseInt(this.getDecimal()) + Integer.parseInt(system.getDecimal()))).getBinary();
+    }
+
+    @Override
+    public String getSubtractionResult(NumeralSystem system) {
+        return new Decimal(String.valueOf(Integer.parseInt(this.getDecimal()) - Integer.parseInt(system.getDecimal()))).getBinary();
+    }
+
     @Override
     public String toString() {
         return "Двоичная";

@@ -26,6 +26,9 @@ public class HelloController implements Initializable {
     private Label errorLabel;
 
     @FXML
+    private Label errorOperaionLabel;
+
+    @FXML
     private TextField binaryResultField;
 
     @FXML
@@ -59,18 +62,23 @@ public class HelloController implements Initializable {
     void getOperationResult(ActionEvent event) throws NoSuchMethodException, InvocationTargetException, InstantiationException, IllegalAccessException {
         NumeralSystem num1 = systemSelectionField2.getSelectionModel().getSelectedItem().clone();
         NumeralSystem num2 = systemSelectionField2.getSelectionModel().getSelectedItem().clone();
-        num1.setValue(inputNumberField1.getText());
-        num2.setValue(inputNumberField2.getText());
-        String result = "";
-        switch (operationSelectionField.getSelectionModel().getSelectedItem()){
-            case "+":
-                result = num1.getAdditionResult(num2);
-                break;
-            case "-":
-                result = num1.getSubtractionResult(num2);
-                break;
+        try {
+            num1.setValue(inputNumberField1.getText());
+            num2.setValue(inputNumberField2.getText());
+            String result = "";
+            switch (operationSelectionField.getSelectionModel().getSelectedItem()){
+                case "+":
+                    result = num1.getAdditionResult(num2);
+                    break;
+                case "-":
+                    result = num1.getSubtractionResult(num2);
+                    break;
+            }
+            operationResultField.setText(result);
+        } catch (Exception e){
+            errorOperaionLabel.setText(e.getMessage());
         }
-        operationResultField.setText(result);
+
     }
 
     @FXML

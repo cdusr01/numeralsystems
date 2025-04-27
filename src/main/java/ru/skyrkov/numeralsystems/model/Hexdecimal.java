@@ -4,6 +4,7 @@ import java.util.Arrays;
 
 import static java.lang.Math.pow;
 import static ru.skyrkov.numeralsystems.util.Util.binaryMap;
+import static ru.skyrkov.numeralsystems.util.Util.hexDigits;
 
 public class Hexdecimal extends NumeralSystem{
     public Hexdecimal(String hexdecimal){
@@ -14,7 +15,6 @@ public class Hexdecimal extends NumeralSystem{
     public String getDecimal(){
         int result = 0;
         if (!hexdecimal.equals("0")){
-            char[] hexDigits = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F'};
             char[] number = hexdecimal.toCharArray();
             int len = hexdecimal.length() - 1;
             for (int i = 0; i <= len; i++) {
@@ -25,7 +25,7 @@ public class Hexdecimal extends NumeralSystem{
                         break;
                     }
                 }
-                result += index * pow(16, i);
+                result += (int) (index * pow(16, i));
             }
         }
         setDecimal(String.valueOf(result));
@@ -50,6 +50,16 @@ public class Hexdecimal extends NumeralSystem{
     @Override
     public void setValue(String hexdecimal){
         setHexdecimal(hexdecimal);
+    }
+
+    @Override
+    public String getAdditionResult(NumeralSystem system) {
+        return new Decimal(String.valueOf(Integer.parseInt(this.getDecimal()) + Integer.parseInt(system.getDecimal()))).getHexdecimal();
+    }
+
+    @Override
+    public String getSubtractionResult(NumeralSystem system) {
+        return new Decimal(String.valueOf(Integer.parseInt(this.getDecimal()) - Integer.parseInt(system.getDecimal()))).getHexdecimal();
     }
 
     @Override
