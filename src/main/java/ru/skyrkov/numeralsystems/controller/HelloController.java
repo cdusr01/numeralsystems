@@ -62,6 +62,7 @@ public class HelloController implements Initializable {
     void getOperationResult(ActionEvent event) throws NoSuchMethodException, InvocationTargetException, InstantiationException, IllegalAccessException {
         NumeralSystem num1 = systemSelectionField2.getSelectionModel().getSelectedItem().clone();
         NumeralSystem num2 = systemSelectionField2.getSelectionModel().getSelectedItem().clone();
+        errorOperaionLabel.setText("");
         try {
             num1.setValue(inputNumberField1.getText());
             num2.setValue(inputNumberField2.getText());

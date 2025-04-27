@@ -104,7 +104,7 @@
     -fx-font-size: 16px;
 }
 
-#errorLabel #errorOperaionLabel {
+#errorLabel, #errorOperaionLabel {
     -fx-text-fill: #ff5555;
 }
 
